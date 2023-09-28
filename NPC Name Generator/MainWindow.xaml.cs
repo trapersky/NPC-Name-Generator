@@ -23,7 +23,16 @@ namespace NPC_Name_Generator
         public MainWindow()
         {
             InitializeComponent();
+            switch (species)
+            {
+                default:
+                    //this code should never be executed, as the condition should never be met
+                    Console.WriteLine("You shouldn't see this");
+                    break;
+            }
         }
+
+        public readonly string species;
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
