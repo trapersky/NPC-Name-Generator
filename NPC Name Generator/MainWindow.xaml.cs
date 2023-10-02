@@ -23,6 +23,7 @@ namespace NPC_Name_Generator
         public MainWindow()
         {
             InitializeComponent();
+            Random random = new Random();
             switch (species)
             {
                 default:
