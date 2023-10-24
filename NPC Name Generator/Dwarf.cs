@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace NPC_Name_Generator
 {
-    internal class Dwarf
+    public class Dwarf
     {
-        string[] DwarfM = {"Bjarni", "Ulf", "Wulfgar", "Orri", "Snorri", "Rockham", "Thorgar", "Ulfen", "Ragnar", "Korgan", "Kagain", "Kagaln", "Morri", "Lokir", "Durgan", "Norri" };
-        string[] DwarfF = { "Ulfa", "Gwynn", "Brunhild", "Morra", "Ferri", "Orrina", "Frigg", "Bjor", "Cherri", "Monna", "Fredda", "Wulfhild", "Thorri", "Yrsa", "Ursa", "Ynge" };
+        Random random = new Random();
 
-        string[] FamilyName = { "Ragnarssen", "Ironhand", "Stonefist", "Rockwool", "Steelshank", "Wulfsen", "Bjarnisson", "Stoneface", "Steinschwert", "Ironheart", "Orkslayer", "Goblinbane", "Axethrower", "Bergwerker", "Rocklobber", "Eisenhaltig" };
+        public List<string> DwarfM = new List<string> {"Bjarni", "Ulf", "Wulfgar", "Orri", "Snorri", "Rockham", "Thorgar", "Ulfen", "Ragnar", "Korgan", "Kagain", "Kagaln", "Morri", "Lokir", "Durgan", "Norri" };
+        List<string> DwarfF = new List<string> { "Ulfa", "Gwynn", "Brunhild", "Morra", "Ferri", "Orrina", "Frigg", "Bjor", "Cherri", "Monna", "Fredda", "Wulfhild", "Thorri", "Yrsa", "Ursa", "Ynge" };
+
+        List<string> FamilyName = new List<string> { "Ragnarssen", "Ironhand", "Stonefist", "Rockwool", "Steelshank", "Wulfsen", "Bjarnisson", "Stoneface", "Steinschwert", "Ironheart", "Orkslayer", "Goblinbane", "Axethrower", "Bergwerker", "Rocklobber", "Eisenhaltig" };
+
     }
 }
