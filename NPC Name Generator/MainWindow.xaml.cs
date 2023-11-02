@@ -23,23 +23,62 @@ namespace NPC_Name_Generator
     {
         public MainWindow()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
+
+
         private string species;
-        string DwarfTest = "Test";
+        private bool male;
+        private bool family;
+        private bool nick;
+        string FirstName;
+        string LastName;
+        int listNumber;
+
+        void printFullName()
+        {
+            //add conditional formatting of PrintedName, depending of how many names are to be generated for one hero
+
+            string PrintedName;
+            PrintedName = FirstName + " " + LastName;
+            NameOutput.Text = PrintedName;
+        }
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
             switch (species)
             {
                 case "Dwarves":
-                    NameOutput.Text = "Tested";
-                    break;
+                    Dwarf dwarf = new Dwarf();
+                    Random random = new Random();
+                    if (family == true)
+                    {
+                        int length = dwarf.FamilyName.Count;
+                        listNumber = random.Next(0, length);
+                        LastName = dwarf.FamilyName[listNumber];
+                    }                    
+
+                    if (male == true)
+                    {
+                        int length = dwarf.DwarfM.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = dwarf.DwarfM[listNumber];
+                        printFullName();
+                        break;
+                    }
+                    else
+                    {
+                        int length = dwarf.DwarfF.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = dwarf.DwarfF[listNumber];
+                        printFullName();
+                        break;
+                    }
                 case "Elf":
-                    //placeholder
-                    Console.WriteLine("You shouldn't see this");
+                    //quick check if switch works
+                    FirstName = "Elf McElf the Elf";
+                    printFullName();
                     break;
                 case "Halfling":
                     //placeholder
@@ -50,8 +89,8 @@ namespace NPC_Name_Generator
                     Console.WriteLine("You shouldn't see this");
                     break;
                 default:
-                    //this code should never be executed, as the condition should never be met
-                    Console.WriteLine("You shouldn't see this");
+                    //this should never be shown
+                    NameOutput.Text = "You shouldn't see this!";
                     break;
             }
         }
@@ -89,6 +128,34 @@ namespace NPC_Name_Generator
         private void NameOutput_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Male_Checked(object sender, RoutedEventArgs e)
+        {
+            male = true;
+            Female.IsChecked = false;
+        }
+
+        private void Family_Checked(object sender, RoutedEventArgs e)
+        {
+            //add working unchecked condition
+            family = true;
+        }
+
+        private void Female_Checked(object sender, RoutedEventArgs e)
+        {
+            male = false;
+            Male.IsChecked = false;
+        }
+
+        private void Nick_Checked(object sender, RoutedEventArgs e)
+        {
+            nick = true;
+        }
+
+        private void Elf_Checked(object sender, RoutedEventArgs e)
+        {
+            species = "Elf";
         }
     }
 }
