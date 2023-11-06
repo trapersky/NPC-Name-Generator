@@ -35,14 +35,31 @@ namespace NPC_Name_Generator
         string FirstName;
         string LastName;
         int listNumber;
+        string Nickname;
+
+        void AddNickname()
+        {
+            // as the Nickname has been represented by an enum, it has been converted to a list with LINQ
+            
+            Random random = new Random();
+            var values = (Enum.GetValues(typeof(Nickname)) as IEnumerable<Nickname>).ToList();
+            int length = values.Count;
+            int nickNumber = random.Next(0, length);
+            var nicknamed = values[nickNumber];
+            
+            if (nick == true) { Nickname = " known as " + nicknamed.ToString(); }
+            else { Nickname = ""; }
+            
+        }
 
         void printFullName()
         {
-            //add conditional formatting of PrintedName, depending of how many names are to be generated for one hero
+            // writes hero name or names in the Character Name field 
 
             string PrintedName;
-            PrintedName = FirstName + " " + LastName;
-            NameOutput.Text = PrintedName;
+            if (family == false) { PrintedName = FirstName; LastName = ""; }
+            else { PrintedName = FirstName + " " + LastName; }
+            NameOutput.Text = PrintedName + Nickname;
         }
 
         private void Generate_Click(object sender, RoutedEventArgs e)
@@ -51,13 +68,14 @@ namespace NPC_Name_Generator
             {
                 case "Dwarves":
                     Dwarf dwarf = new Dwarf();
+                    AddNickname();
                     Random random = new Random();
                     if (family == true)
                     {
                         int length = dwarf.FamilyName.Count;
                         listNumber = random.Next(0, length);
                         LastName = dwarf.FamilyName[listNumber];
-                    }                    
+                    }
 
                     if (male == true)
                     {
@@ -100,10 +118,6 @@ namespace NPC_Name_Generator
             throw new NotImplementedException();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void Blank_Click(object sender, RoutedEventArgs e)
         {
@@ -138,7 +152,6 @@ namespace NPC_Name_Generator
 
         private void Family_Checked(object sender, RoutedEventArgs e)
         {
-            //add working unchecked condition
             family = true;
         }
 
@@ -156,6 +169,21 @@ namespace NPC_Name_Generator
         private void Elf_Checked(object sender, RoutedEventArgs e)
         {
             species = "Elf";
+        }
+
+        private void Family_Unchecked(object sender, RoutedEventArgs e)
+        {
+            family = false;
+        }
+
+        private void Nick_Unchecked(object sender, RoutedEventArgs e)
+        {
+            nick = false;
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
