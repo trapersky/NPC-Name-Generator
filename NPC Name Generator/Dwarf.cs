@@ -10,8 +10,8 @@ namespace NPC_Name_Generator
     {
         Random random = new Random();
 
-        public List<string> DwarfM = new List<string> {"Bjarni", "Ulf", "Wulfgar", "Orri", "Snorri", "Rockham", "Thorgar", "Ulfen", "Ragnar", "Korgan", "Kagain", "Kagaln", "Morri", "Lokir", "Durgan", "Norri" };
-        public List<string> DwarfF = new List<string> { "Ulfa", "Gwynn", "Brunhild", "Morra", "Ferri", "Orrina", "Frigg", "Bjor", "Cherri", "Monna", "Fredda", "Wulfhild", "Thorri", "Yrsa", "Ursa", "Ynge" };
+        public List<string> Males = new List<string> {"Bjarni", "Ulf", "Wulfgar", "Orri", "Snorri", "Rockham", "Thorgar", "Ulfen", "Ragnar", "Korgan", "Kagain", "Kagaln", "Morri", "Lokir", "Durgan", "Norri" };
+        public List<string> Females = new List<string> { "Ulfa", "Gwynn", "Brunhild", "Morra", "Ferri", "Orrina", "Frigg", "Bjor", "Cherri", "Monna", "Fredda", "Wulfhild", "Thorri", "Yrsa", "Ursa", "Ynge" };
 
         public List<string> FamilyName = new List<string> { "Ragnarssen", "Ironhand", "Stonefist", "Rockwool", "Steelshank", "Wulfsen", "Bjarnisson", "Stoneface", "Steinschwert", "Ironheart", "Orkslayer", "Goblinbane", "Axethrower", "Bergwerker", "Rocklobber", "Eisenhaltig" };
        

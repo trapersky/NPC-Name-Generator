@@ -32,7 +32,7 @@
         <Button x:Name="Blank" Grid.Column="1" Content="Blank" HorizontalAlignment="Right" Margin="0,24,290,0" Grid.Row="2" VerticalAlignment="Top" Cursor="Hand" Click="Blank_Click" Width="100"/>
         <RadioButton x:Name="Dwarves" Content="Dwarf" HorizontalAlignment="Left" Margin="147,34,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Dwarves_Checked"/>
         <RadioButton x:Name="Elf" Content="Elf" HorizontalAlignment="Left" Margin="147,54,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Elf_Checked"/>
-        <RadioButton x:Name="Halfling" Content="Halfling" HorizontalAlignment="Left" Margin="147,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Halfling" Content="Halfling" HorizontalAlignment="Left" Margin="147,73,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Halfling_Checked"/>
         <RadioButton x:Name="Human" Content="Human" HorizontalAlignment="Left" Margin="147,92,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
         <RadioButton x:Name="Noble" Content="Noble" HorizontalAlignment="Left" Margin="147,111,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <RadioButton x:Name="Peasant" Content="Peasant" HorizontalAlignment="Left" Margin="147,130,0,0" Grid.Row="1" VerticalAlignment="Top"/>
