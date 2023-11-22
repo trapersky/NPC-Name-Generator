@@ -20,7 +20,7 @@
         <CheckBox x:Name="Female" Content="Female" HorizontalAlignment="Left" Margin="118,77,0,0" VerticalAlignment="Top" Checked="Female_Checked"/>
         <CheckBox x:Name="Family" Content="Family Name" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="209,0,0,0" IsChecked="False" Checked="Family_Checked" Unchecked="Family_Unchecked"/>
         <CheckBox x:Name="Nick" Content="Nickname" HorizontalAlignment="Left" Margin="209,77,0,0" VerticalAlignment="Top" Checked="Nick_Checked" Unchecked="Nick_Unchecked"/>
-        <TextBox x:Name="NameOutput" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="86,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="240" TextChanged="NameOutput_TextChanged"/>
+        <TextBox x:Name="NameOutput" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="86,54,0,0" TextWrapping="Wrap" Text="Press &quot;Generate&quot; to create a new hero!" VerticalAlignment="Top" Width="240" TextChanged="NameOutput_TextChanged"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="102"/>
         <TextBlock HorizontalAlignment="Left" Margin="147,15,0,0" TextWrapping="Wrap" Text="Character Input" VerticalAlignment="Top"/>
         <ListBox Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
@@ -30,12 +30,11 @@
         <Button x:Name="Quit" Grid.Column="1" Content="Quit" HorizontalAlignment="Right" Margin="0,24,80,0" Grid.Row="2" VerticalAlignment="Top" Cursor="Hand" Click="Quit_Click" Width="100"/>
         <Button x:Name="Remove" Content="Remove" HorizontalAlignment="Left" Margin="290,24,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.282,0.665" Width="100" Click="Remove_Click"/>
         <Button x:Name="Blank" Grid.Column="1" Content="Blank" HorizontalAlignment="Right" Margin="0,24,290,0" Grid.Row="2" VerticalAlignment="Top" Cursor="Hand" Click="Blank_Click" Width="100"/>
-        <RadioButton x:Name="Dwarves" Content="Dwarf" HorizontalAlignment="Left" Margin="147,34,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Dwarves_Checked"/>
-        <RadioButton x:Name="Elf" Content="Elf" HorizontalAlignment="Left" Margin="147,54,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Elf_Checked"/>
-        <RadioButton x:Name="Halfling" Content="Halfling" HorizontalAlignment="Left" Margin="147,73,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Halfling_Checked"/>
-        <RadioButton x:Name="Human" Content="Human" HorizontalAlignment="Left" Margin="147,92,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="Noble" Content="Noble" HorizontalAlignment="Left" Margin="147,111,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <RadioButton x:Name="Peasant" Content="Peasant" HorizontalAlignment="Left" Margin="147,130,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Dwarves" Content="Dwarf" HorizontalAlignment="Left" Margin="146,46,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Dwarves_Checked"/>
+        <RadioButton x:Name="Elf" Content="Elf" HorizontalAlignment="Left" Margin="146,66,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Elf_Checked"/>
+        <RadioButton x:Name="Halfling" Content="Halfling" HorizontalAlignment="Left" Margin="147,86,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Halfling_Checked"/>
+        <RadioButton x:Name="Human" Content="Human" HorizontalAlignment="Left" Margin="146,106,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Checked="Human_Checked"/>
+        <RadioButton x:Name="Noble" Content="Noble" HorizontalAlignment="Left" Margin="146,126,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Noble_Checked"/>
 
     </Grid>
 </Window>

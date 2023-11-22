@@ -65,7 +65,11 @@ namespace NPC_Name_Generator
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
+            //this is to say that user provided no input apart from species            
             Random random = new Random();
+            if (Male.IsChecked == false && Female.IsChecked == false && Nick.IsChecked == false && Family.IsChecked == false)
+            { NameOutput.Text = "Please select some input for your hero!"; }
+            else
             switch (species)
             {
                 // this switch is tied to radio buttons, enables to generate the proper name based on input
@@ -97,11 +101,32 @@ namespace NPC_Name_Generator
                         break;
                     }
                 case "Elf":
-                    //quick check if switch works
-                    FirstName = "Elf McElf the Elf";
-                    printFullName();
-                    break;
-                case "Halfling":
+                        Elf elf = new Elf();
+                        AddNickname();
+                        if (family == true)
+                        {
+                            int length = elf.FamilyName.Count;
+                            listNumber = random.Next(0, length);
+                            LastName = elf.FamilyName[listNumber];
+                        }
+
+                        if (male == true)
+                        {
+                            int length = elf.Males.Count;
+                            listNumber = random.Next(0, length);
+                            FirstName = elf.Males[listNumber];
+                            printFullName();
+                            break;
+                        }
+                        else
+                        {
+                            int length = elf.Females.Count;
+                            listNumber = random.Next(0, length);
+                            FirstName = elf.Females[listNumber];
+                            printFullName();
+                            break;
+                        }
+                    case "Halfling":
                     Halfling halfling = new Halfling();
                     AddNickname();
                     if (family == true)
@@ -128,13 +153,60 @@ namespace NPC_Name_Generator
                         break;
                     }
                 case "Human":
-                    //placeholder
-                    Console.WriteLine("You shouldn't see this");
-                    break;
-                default:
-                    //this is to say that user provided no input apart from species
-                    if ( Male.IsChecked == false && Female.IsChecked == false && Nick.IsChecked == false && Family.IsChecked == false)
-                        { NameOutput.Text = "Please select name input!"; }
+                    Human human = new Human();
+                    AddNickname();
+                    if (family == true)
+                    {
+                        int length = human.FamilyName.Count;
+                        listNumber = random.Next(0, length);
+                        LastName = human.FamilyName[listNumber];
+                    }
+
+                    if (male == true)
+                    {
+                        int length = human.Males.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = human.Males[listNumber];
+                        printFullName();
+                        break;
+                    }
+                    else
+                    {
+                        int length = human.Females.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = human.Females[listNumber];
+                        printFullName();
+                        break;
+                    }
+                case "Noble":
+                    Noble noble = new Noble();
+                    AddNickname();
+                    if (family == true)
+                    {
+                        int length = noble.FamilyName.Count;
+                        listNumber = random.Next(0, length);
+                        LastName = noble.FamilyName[listNumber];
+                    }
+
+                    if (male == true)
+                    {
+                        int length = noble.Males.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = noble.Males[listNumber];
+                        printFullName();
+                        break;
+                    }
+                    else
+                    {
+                        int length = noble.Females.Count;
+                        listNumber = random.Next(0, length);
+                        FirstName = noble.Females[listNumber];
+                        printFullName();
+                        break;
+                    }
+                    default:
+                    //should never be seen, as conditions should never be met; left for bugfixing
+                    NameOutput.Text = "Oops! Something went wrong!";
                     break;
             }
         }
@@ -215,6 +287,16 @@ namespace NPC_Name_Generator
         private void Halfling_Checked(object sender, RoutedEventArgs e)
         {
             species = "Halfling";
+        }
+
+        private void Human_Checked(object sender, RoutedEventArgs e)
+        {
+            species = "Human";
+        }
+
+        private void Noble_Checked(object sender, RoutedEventArgs e)
+        {
+            species = "Noble";
         }
     }
 }
