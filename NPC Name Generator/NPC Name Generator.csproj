@@ -73,7 +73,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NameGenerator.cs" />
     <Compile Include="Nickname.cs" />
     <Compile Include="Noble.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
