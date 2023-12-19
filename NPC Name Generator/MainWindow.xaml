@@ -25,9 +25,6 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="102"/>
         <TextBlock HorizontalAlignment="Left" Margin="147,15,0,0" TextWrapping="Wrap" Text="Character Input" VerticalAlignment="Top"/>
         <ListBox x:Name="HeroList" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="197" Width="311">
-            <ListBox.ItemsSource>
-                <Collections:SortedList/>
-            </ListBox.ItemsSource>
         </ListBox>
         <Button x:Name="Generate" Content="Generate" HorizontalAlignment="Left" Margin="80,24,0,0" Grid.Row="2" VerticalAlignment="Top" Cursor="Hand" Click="Generate_Click" Width="100"/>
         <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="185,24,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Add_Click" Cursor="Hand" Width="100"/>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -36,6 +37,7 @@ namespace NPC_Name_Generator
         string LastName;
         int listNumber;
         string Nickname;
+        private string Hero;
 
         void AddNickname()
         {
@@ -47,8 +49,9 @@ namespace NPC_Name_Generator
             int length = values.Count;
             int nickNumber = random.Next(0, length);
             var nicknamed = values[nickNumber];
-            
-            if (nick == true) { Nickname = " known as " + nicknamed.ToString(); }
+
+            if (nick == true && (Female.IsChecked == true || Male.IsChecked == true || family == true)) { Nickname = " known as " + nicknamed.ToString(); }
+            else if (nick == true && (Female.IsChecked == false && Male.IsChecked == false && family == false)) { Nickname =  nicknamed.ToString(); }
             else { Nickname = ""; }
             
         }
@@ -59,6 +62,7 @@ namespace NPC_Name_Generator
 
             string PrintedName;
             if (family == false) { PrintedName = FirstName; LastName = ""; }
+            else if (family == true && Male.IsChecked == false && Female.IsChecked == false) { PrintedName = LastName; FirstName = ""; }
             else { PrintedName = FirstName + " " + LastName; }
             NameOutput.Text = PrintedName + Nickname;
         }
@@ -67,8 +71,14 @@ namespace NPC_Name_Generator
         {
             //this is to say that user provided no input apart from species            
             Random random = new Random();
-            if (Male.IsChecked == false && Female.IsChecked == false && Nick.IsChecked == false && Family.IsChecked == false)
+            if (Male.IsChecked == false && Female.IsChecked == false && nick == false && family == false)
             { NameOutput.Text = "Please select some input for your hero!"; }
+            //this enables to generate just a random nickname from the list
+            else if (Male.IsChecked == false && Female.IsChecked == false && family ==false && nick == true) 
+            {
+                AddNickname();
+                NameOutput.Text = Nickname;
+            }
             else
             switch (species)
             {
@@ -213,13 +223,17 @@ namespace NPC_Name_Generator
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (NameOutput.Text != "Please select some input for your hero!" && NameOutput.Text != "Press \"Generate\" to create a new hero!" && !HeroList.Items.Contains (NameOutput.Text))
+            {
+                Hero = NameOutput.Text;
+                HeroList.Items.Add(Hero);
+            }
         }
 
 
         private void Blank_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            HeroList.Items.Clear();
         }
 
         private void Export_Click(object sender, RoutedEventArgs e)
@@ -281,7 +295,7 @@ namespace NPC_Name_Generator
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            HeroList.Items.Remove(HeroList.Items.GetItemAt(HeroList.Items.Count -1));
         }
 
         private void Halfling_Checked(object sender, RoutedEventArgs e)
