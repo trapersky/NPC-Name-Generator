@@ -326,5 +326,10 @@ namespace NPC_Name_Generator
         {
             species = "Noble";
         }
+
+        private void HeroList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            HeroList.Items.Remove(HeroList.SelectedItem);
+        }
     }
 }
