@@ -22,7 +22,7 @@
         <CheckBox x:Name="Family" Content="Family Name" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="209,0,0,0" IsChecked="False" Checked="Family_Checked" Unchecked="Family_Unchecked"/>
         <CheckBox x:Name="Nick" Content="Nickname" HorizontalAlignment="Left" Margin="209,77,0,0" VerticalAlignment="Top" Checked="Nick_Checked" Unchecked="Nick_Unchecked"/>
         <TextBox x:Name="NameOutput" Grid.Column="1" HorizontalAlignment="Center" Height="32" Margin="0,54,0,0" TextWrapping="Wrap" Text="Press &quot;Generate&quot; to create a new hero!" VerticalAlignment="Top" Width="252" TextChanged="NameOutput_TextChanged"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="102"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="102"/>
         <TextBlock HorizontalAlignment="Left" Margin="147,15,0,0" TextWrapping="Wrap" Text="Character Input" VerticalAlignment="Top"/>
         <ListBox x:Name="HeroList" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="197" Width="311" MouseDoubleClick="HeroList_MouseDoubleClick">
         </ListBox>
