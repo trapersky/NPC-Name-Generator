@@ -240,13 +240,14 @@ namespace NPC_Name_Generator
 
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            // work on prompting the file to be saved as .txt
             var exports = new StringBuilder();
             foreach (var item in HeroList.Items)
             {
                 exports.AppendLine (item.ToString ());
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "NPC list";
+            saveFileDialog.Filter = "txt file|*.txt";
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
             if (saveFileDialog.ShowDialog() == true) 
             {
