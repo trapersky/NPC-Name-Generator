@@ -13,7 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.IO;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace NPC_Name_Generator
 {
@@ -238,7 +240,18 @@ namespace NPC_Name_Generator
 
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // work on prompting the file to be saved as .txt
+            var exports = new StringBuilder();
+            foreach (var item in HeroList.Items)
+            {
+                exports.AppendLine (item.ToString ());
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+            if (saveFileDialog.ShowDialog() == true) 
+            {
+                File.WriteAllText (saveFileDialog.FileName, exports.ToString ());
+            }
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)
