@@ -1,4 +1,4 @@
-This is an application meant as assistance for RPG game masters. It will surely be further modified, with more names and races added, as well as possibly other functionalities.
+This is an application meant as assistance for RPG game masters. It will surely be further modified, with more names and species added, as well as possibly other functionalities.
 
 The initial release contains a set of 16 male, 16 female and 16 family names for each species, and 40 universal nicknames.
 
