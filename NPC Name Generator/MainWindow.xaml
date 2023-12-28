@@ -37,6 +37,8 @@
         <RadioButton x:Name="Halfling" Content="Halfling" HorizontalAlignment="Left" Margin="147,86,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Halfling_Checked"/>
         <RadioButton x:Name="Human" Content="Human" HorizontalAlignment="Left" Margin="146,106,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Checked="Human_Checked"/>
         <RadioButton x:Name="Noble" Content="Noble" HorizontalAlignment="Left" Margin="146,126,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="Noble_Checked"/>
+        <Label x:Name="copyright" Content="(c) GPL  trapersky 2023" HorizontalAlignment="Left" Margin="332,69,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="136"/>
+        <Label x:Name="version" Content="v1.0" HorizontalAlignment="Left" Height="29" Margin="354,69,0,0" Grid.Row="2" VerticalAlignment="Top" Width="36" Grid.Column="1"/>
 
     </Grid>
 </Window>
